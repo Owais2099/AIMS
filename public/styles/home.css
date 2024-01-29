@@ -1,0 +1,206 @@
+#home-header {
+  display: grid;
+  grid-template-columns: 1fr;
+  text-align: center;
+  max-width: 57rem;
+}
+
+section {
+  scroll-margin-top: 6rem;
+}
+
+#logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+#logo img {
+  max-width: 100%;
+  max-height: 100%;
+  height: 8rem;
+  display: block;
+}
+
+#headings {
+  text-align: center;
+  background: url('/images/iqra.png') center/contain no-repeat;
+}
+
+#headings div {
+  align-items: center;
+  gap: var(--space-8);
+}
+
+#headings h1 {
+  font-size: 5rem;
+  vertical-align: middle;
+}
+
+#headings h1,
+h2 {
+  color: var(--color-primary-600);
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+}
+
+#headings h2 {
+  font-size: 1.5rem;
+  text-align: center;
+  margin: var(--space-4) 0;
+}
+
+#headings div h2 {
+  margin-top: 0;
+}
+
+.home-nav {
+  width: 90%;
+  margin: 0 auto;
+  background-color: black;
+}
+
+.home-menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(8rem, 1fr)
+  );
+  grid-gap: 0;
+}
+
+.home-menu li {
+  margin: auto 0;
+}
+
+.home-menu a {
+  display: block;
+  padding: var(--space-2);
+  text-decoration: none;
+  color: var(--color-gray-100);
+  text-align: center;
+}
+
+.home-menu a:hover {
+  background-color: #333;
+}
+
+#home-content {
+  margin-top: 0;
+}
+
+#mission ul,
+#features ul {
+  list-style: square;
+  margin-left: var(--space-8);
+}
+
+#banner {
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+  border-radius: var(--border-radius-medium);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Gabriola', sans-serif;
+  margin: 0;
+}
+
+h3 {
+  font-size: var(--space-8);
+  margin-top: var(--space-4);
+}
+
+h4 {
+  font-size: var(--space-6);
+}
+
+section p {
+  margin-top: 0;
+}
+
+#offer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto;
+  text-align: center;
+}
+
+#offer div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#offer div:nth-child(3) {
+  grid-column: span 2;
+}
+
+.grades {
+  height: 6rem;
+  width: 6rem;
+  border-radius: 100%;
+}
+
+.register-btn {
+  text-align: center;
+  margin: var(--space-6);
+}
+
+@media (min-width: 48rem) {
+  section {
+    scroll-margin-top: var(--space-8);
+  }
+  #banner {
+    width: 100%;
+    height: 16rem;
+  }
+  #home-header {
+    grid-template-columns: 1fr 4fr;
+    text-align: left;
+  }
+  #offer {
+    grid-template-rows: auto auto;
+  }
+  .grades {
+    height: 10rem;
+    width: 10rem;
+  }
+  h4 {
+    font-size: var(--space-8);
+  }
+  #headings div {
+    display: flex;
+  }
+
+  #headings h1 {
+    font-size: 10rem;
+  }
+
+  #headings h2 {
+    font-size: 3rem;
+  }
+
+  #headings div h2 {
+    max-width: 20rem;
+  }
+
+  .home-menu {
+    grid-gap: var(--space-2);
+  }
+
+  .home-menu a {
+    padding: var(--space-4);
+  }
+}

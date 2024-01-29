@@ -1,0 +1,43 @@
+<%- include('../shared/includes/head', {pageTitle: 'Admin Dashboard'}) %>
+<link rel="stylesheet" href="/styles/students.css">
+<script src="/scripts/student-management.js" defer></script>
+</head>
+<body>
+  <%- include('../shared/includes/header') %>
+  <main>
+    <h1>Admin Dashboard</h1>
+    <section>
+      <h2>Manage Admins</h2>
+      <p>
+        <a href="/admin/new" class="btn">Add Admin</a>
+      </p>
+    </section>
+    <hr>
+    <section>
+      <h2>Manage Students</h2>
+      <p>
+        <a href="/register" class="btn">Add Student</a>
+      </p>
+    </section>
+    <hr>
+    <section>
+      <% for (const classItem of classes) { %>
+        <% let studentCount = 0;%>
+        <h3><u><%= classItem.title %>:</u></h3>
+        <ul id="students-list">
+          <% for (const student of students) { %>
+            <% if (student.class_id === classItem.id) { %>
+              <% studentCount += 1; %>
+              <li>
+                <%- include('../students/includes/student-item', { student: student, studentCount: studentCount }) %>
+              </li>
+            <% } %>
+          <% } %>
+          <% if (studentCount === 0) { %>
+            <div class="empty-message">No students in this class.</div>
+          <% } %>
+        </ul>
+      <% } %>
+    </section>
+  </main>
+  <%- include('../shared/includes/footer') %>

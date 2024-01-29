@@ -1,0 +1,11 @@
+<%- include('../shared/includes/head', {pageTitle: 'Update Student'}) %>
+<link rel="stylesheet" href="/styles/forms.css">
+<link rel="stylesheet" href="/styles/auth.css">
+</head>
+<body>
+  <%- include('../shared/includes/header') %>
+  <main>
+    <h1>Update Student</h1>
+    <%- include('includes/student-form', { submitPath: '/admin/student/' + student.id, inputData: student}) %>
+  </main>
+  <%- include('../shared/includes/footer') %>

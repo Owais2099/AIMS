@@ -1,0 +1,25 @@
+<%- include('../shared/includes/head', {pageTitle: student.fullname }) %>
+<link rel="stylesheet" href="/styles/students.css">
+<script src="/scripts/cart-management.js" defer></script>
+</head>
+<body>
+  <%- include('../shared/includes/header') %>
+  <main id="student-details">
+        <h2><%= student.fullname %></h2>
+        <p><b>Date Of Birth:</b> <%= student.date_of_birth %></p>
+        <p><b>Religion:</b> <%= student.religion %></p>
+        <p><b>Disability:</b> <%= student.disability %></p>
+        <p><b>Class:</b> <%= student.grade %></p>
+        <p><b>Guardian Name:</b> <%= student.guardian_name %></p>
+        <p><b>Father Name:</b> <%= student.father_name %></p>
+        <p><b>Guardian's CNIC:</b> <%= student.cnic %></p>
+        <p><b>Occupation:</b> <%= student.occupation %></p>
+        <p><b>Phone (Home):</b> <%= student.phone_home %></p>
+        <p><b>Phone (Office):</b> <%= student.phone_office %></p>
+        <p><b>Address (Home):</b> <%= student.address_home %></p>
+        <p><b>Address (Office):</b> <%= student.address_office %></p>
+        <p><b>Income:</b> <%= student.income %></p>
+        <p><b>Registration Date:</b> <%= student.registered_at %></p>
+        <a class="btn btn-alt" href="/admin/student/<%= student.id %>">Edit</a>
+  </main>
+  <%- include('../shared/includes/footer') %>

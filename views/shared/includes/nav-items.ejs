@@ -1,0 +1,16 @@
+<ul class="nav-items">
+  <li><a href="/">Home</a></li>
+  <li><a href="/register">Register Now!</a></li>
+  <% if (locals.isAuth) { %>
+  <li><a href="/admin">Admin Dashboard</a></li>
+  <% } else { %>
+  <li><a href="/login">Admin Dashboard</a></li>
+  <% } %> <% if (locals.isAuth) { %>
+  <li>
+    <form action="/logout" method="POST">
+      <input type="hidden" name="_csrf" value="<%= locals.csrfToken %>" />
+      <button id="logout">Logout</button>
+    </form>
+  </li>
+  <% } %>
+</ul>

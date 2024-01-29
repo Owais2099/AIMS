@@ -1,0 +1,161 @@
+<form action="<%= submitPath %>" method="POST">
+  <input type="hidden" name="_csrf" value="<%= locals.csrfToken %>" />
+  <% if (inputData.errorMessage) { %>
+  <section class="alert">
+    <h2>Invalid Input</h2>
+    <p><%= inputData.errorMessage %></p>
+  </section>
+  <% } %>
+  <h2>Student Information</h2>
+  <p>
+    <label for="fullname">Full Name</label>
+    <input
+      type="text"
+      id="fullname"
+      name="fullname"
+      value="<%= inputData.fullname %>"
+      required
+    />
+  </p>
+  <p>
+    <label for="date_of_birth">Date of Birth</label>
+    <input
+      type="date"
+      id="date_of_birth"
+      name="date_of_birth"
+      value="<%= inputData.date_of_birth %>"
+      min="2000-01-01"
+      max="2030-12-31"
+      required
+    />
+  </p>
+  <p>
+    <label for="class_id">Select Class</label>
+    <select id="class_id" name="class_id" required>
+      <% for (const grade of classes) { %> <% if (inputData.class_id &&
+      inputData.class_id === grade.id) { %>
+      <option value="<%= grade.id %>" selected><%= grade.title %></option>
+      <% } else if (grade.id >= 5 && grade.id <= 12) { %>
+      <option value="<%= grade.id %>" disabled><%= grade.title %></option>
+      <% } else { %>
+      <option value="<%= grade.id %>"><%= grade.title %></option>
+      <% } %> <% } %>
+    </select>
+  </p>
+  <p>
+    <label for="religion">Religion</label>
+    <input
+      type="text"
+      id="religion"
+      name="religion"
+      value="<%= inputData.religion %>"
+      required
+    />
+  </p>
+  <p>
+    <label for="disability">Disability (if any)</label>
+    <input
+      type="text"
+      id="disability"
+      name="disability"
+      value="<%= inputData.disability %>"
+    />
+  </p>
+  <hr />
+  <h2>Guardian Information</h2>
+  <p>
+    <label for="guardian_name">Guardian Name</label>
+    <input
+      type="text"
+      id="guardian_name"
+      name="guardian_name"
+      value="<%= inputData.guardian_name %>"
+      required
+    />
+  </p>
+  <p>
+    <label for="father_name">Father Name</label>
+    <input
+      type="text"
+      id="father_name"
+      name="father_name"
+      value="<%= inputData.father_name %>"
+      required
+    />
+  </p>
+  <p>
+    <label for="cnic">Guardian's CNIC</label>
+    <input
+      type="text"
+      id="cnic"
+      name="cnic"
+      value="<%= inputData.cnic %>"
+      maxlength="20"
+      placeholder="12345-1234567-1"
+      required
+    />
+  </p>
+  <p>
+    <label for="occupation">Occupation</label>
+    <input
+      type="text"
+      id="occupation"
+      name="occupation"
+      value="<%= inputData.occupation %>"
+      required
+    />
+  </p>
+  <p>
+    <label for="phone_home">Phone Number (Home)</label>
+    <input
+      type="tel"
+      id="phone_home"
+      name="phone_home"
+      maxlength="20"
+      value="<%= inputData.phone_home %>"
+      required
+    />
+  </p>
+  <p>
+    <label for="phone_office">Phone Number (Office)</label>
+    <input
+      type="tel"
+      id="phone_office"
+      name="phone_office"
+      maxlength="20"
+      value="<%= inputData.phone_office %>"
+      required
+    />
+  </p>
+  <p>
+    <label for="address_home">Address (Home)</label>
+    <input
+      type="text"
+      id="address_home"
+      name="address_home"
+      value="<%= inputData.address_home %>"
+      required
+    />
+  </p>
+  <p>
+    <label for="address_office">Address (Office)</label>
+    <input
+      type="text"
+      id="address_office"
+      name="address_office"
+      value="<%= inputData.address_office %>"
+      required
+    />
+  </p>
+  <p>
+    <label for="income">Income (in Rs.)</label>
+    <input
+      type="number"
+      id="income"
+      name="income"
+      value="<%= inputData.income %>"
+      required
+    />
+  </p>
+  <button class="btn">Register</button>
+</form>

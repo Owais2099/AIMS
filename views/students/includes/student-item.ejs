@@ -1,0 +1,16 @@
+<article class="student-item">
+  <h2><%= studentCount %>) <%= student.fullname %></h2>
+  <div class="student-item-actions">
+    <a class="btn btn-alt" href="/admin/student/<%= student.id %>/details"
+      >View</a
+    >
+    <a class="btn btn-alt" href="/admin/student/<%= student.id %>">Edit</a>
+    <button
+      class="btn btn-alt"
+      data-studentid="<%= student.id %>"
+      data-csrf="<%= locals.csrfToken %>"
+    >
+      Delete
+    </button>
+  </div>
+</article>

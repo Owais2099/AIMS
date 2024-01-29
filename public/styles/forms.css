@@ -1,0 +1,31 @@
+form hr {
+  border-color: var(--color-primary-200-contrast);
+  margin: var(--space-8);
+}
+
+label {
+  color: var(--color-primary-500-contrast);
+  display: block;
+  font-weight: 600;
+  margin-bottom: var(--space-2);
+}
+
+input,
+textarea,
+select {
+  font: inherit;
+  padding: var(--space-2);
+  border-radius: var(--border-radius-small);
+  border: none;
+  width: 90%;
+  font-family: inherit;
+  color: inherit;
+  background-color: var(--color-gray-200);
+  box-shadow: var(--shadow-small);
+}
+
+.form-alt input,
+.form-alt textarea,
+.form-alt select {
+  box-shadow: var(--shadow-medium);
+}
