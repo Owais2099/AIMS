@@ -1,3 +1,10 @@
+@font-face {
+  font-family: 'Gabriola';
+  src: url('/fonts/Gabriola.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 #home-header {
   display: grid;
   grid-template-columns: 1fr;
