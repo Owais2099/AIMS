@@ -1,10 +1,18 @@
 <%- include('./shared/includes/head', {pageTitle: 'AIMS'}) %>
 <link rel="stylesheet" href="/styles/home.css">
 <script src="/scripts/smooth-scroll.js" defer></script>
+<script src="/scripts/popup.js" defer></script>
 </head>
 <body>
   <%- include('./shared/includes/header') %>
   <main>
+  <!-- Popup Container -->
+  <div id="popup-container">
+    <div id="popup-content">
+        <img src="/images/popup.jpg" alt="Popup Image">
+        <button id="close-button">Close</button>
+    </div>
+  </div>
   <header id="home-header">
     <div id="logo">
       <a href="/"><img src="/icons/Logo.png" alt="Logo" /></a>
