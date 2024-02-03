@@ -32,14 +32,17 @@
   <p>
     <label for="class_id">Select Class</label>
     <select id="class_id" name="class_id" required>
-      <% for (const grade of classes) { %> <% if (inputData.class_id &&
-      inputData.class_id === grade.id) { %>
-      <option value="<%= grade.id %>" selected><%= grade.title %></option>
-      <% } else if (grade.id >= 5 && grade.id <= 12) { %>
-      <option value="<%= grade.id %>" disabled><%= grade.title %></option>
-      <% } else { %>
-      <option value="<%= grade.id %>"><%= grade.title %></option>
-      <% } %> <% } %>
+      <% for (const grade of classes) { %>
+        <% if (inputData.class_id && inputData.class_id === grade.id) { %>
+          <option value="<%= grade.id %>" selected><%= grade.title %></option>
+        <% } else if (locals.isAuth && locals.isAdmin) { %>
+          <option value="<%= grade.id %>"><%= grade.title %></option>
+        <% } else if (grade.id >= 5 && grade.id <= 12) { %>
+          <option value="<%= grade.id %>" disabled><%= grade.title %></option>
+        <% } else { %>
+          <option value="<%= grade.id %>"><%= grade.title %></option>
+        <% } %>
+      <% } %>
     </select>
   </p>
   <p>
