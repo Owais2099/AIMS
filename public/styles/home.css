@@ -30,6 +30,10 @@ section {
   display: block;
 }
 
+#mobile-menu-logo img {
+  max-height: 8rem ;
+}
+
 #headings {
   text-align: center;
   background: url('/images/iqra.png') center/contain no-repeat;
