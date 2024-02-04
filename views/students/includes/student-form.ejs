@@ -18,6 +18,16 @@
     />
   </p>
   <p>
+    <label for="father_name">Father Name</label>
+    <input
+      type="text"
+      id="father_name"
+      name="father_name"
+      value="<%= inputData.father_name %>"
+      required
+    />
+  </p>
+  <p>
     <label for="date_of_birth">Date of Birth</label>
     <input
       type="date"
@@ -77,16 +87,6 @@
     />
   </p>
   <p>
-    <label for="father_name">Father Name</label>
-    <input
-      type="text"
-      id="father_name"
-      name="father_name"
-      value="<%= inputData.father_name %>"
-      required
-    />
-  </p>
-  <p>
     <label for="cnic">Guardian's CNIC</label>
     <input
       type="text"
@@ -116,7 +116,6 @@
       name="phone_home"
       maxlength="20"
       value="<%= inputData.phone_home %>"
-      required
     />
   </p>
   <p>
@@ -127,7 +126,6 @@
       name="phone_office"
       maxlength="20"
       value="<%= inputData.phone_office %>"
-      required
     />
   </p>
   <p>
@@ -147,7 +145,6 @@
       id="address_office"
       name="address_office"
       value="<%= inputData.address_office %>"
-      required
     />
   </p>
   <p>

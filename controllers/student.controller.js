@@ -40,36 +40,21 @@ async function addNewStudent(req, res, next) {
     fullname: req.body.fullname,
     date_of_birth: req.body.date_of_birth,
     religion: req.body.religion,
-    disability: req.body.disability,
+    disability: req.body.disability || "None",
     class_id: req.body.class_id,
     guardian_name: req.body.guardian_name,
     father_name: req.body.father_name,
     cnic: req.body.cnic,
     occupation: req.body.occupation,
-    phone_home: req.body.phone_home,
-    phone_office: req.body.phone_office,
+    phone_home: req.body.phone_home || "---",
+    phone_office: req.body.phone_office || "---",
     address_home: req.body.address_home,
-    address_office: req.body.address_office,
+    address_office: req.body.address_office || "---",
     income: req.body.income,
   }
 
   if (
-    !validation.studentDetailsAreValid(
-      req.body.fullname,
-      req.body.date_of_birth,
-      req.body.religion,
-      req.body.disability,
-      req.body.class_id,
-      req.body.guardian_name,
-      req.body.father_name,
-      req.body.cnic,
-      req.body.occupation,
-      req.body.phone_home,
-      req.body.phone_office,
-      req.body.address_home,
-      req.body.address_office,
-      req.body.income
-    )
+    !validation.studentDetailsAreValid(enteredData)
   ) {
     sessionFlash.flashDataToSession(
       req,

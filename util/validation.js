@@ -11,39 +11,24 @@ function adminDetailsAreValid(email, password) {
   )
 }
 
-function studentDetailsAreValid(
-  fullname,
-  date_of_birth,
-  religion,
-  disability,
-  class_id,
-  guardian_name,
-  father_name,
-  cnic,
-  occupation,
-  phone_home,
-  phone_office,
-  address_home,
-  address_office,
-  income
-) {
+function studentDetailsAreValid(enteredData) {
   return (
-    !isEmpty(fullname) &&
-    !isEmpty(date_of_birth) &&
-    date_of_birth.trim().length === 10 &&
-    !isEmpty(religion) &&
-    !isEmpty(guardian_name) &&
-    !isEmpty(father_name) &&
-    !isEmpty(cnic) &&
-    cnic.trim().length <= 20 &&
-    !isEmpty(occupation) &&
-    !isEmpty(phone_home) &&
-    phone_home.trim().length <= 20 &&
-    !isEmpty(phone_office) &&
-    phone_office.trim().length <= 20 &&
-    !isEmpty(address_home) &&
-    !isEmpty(address_office) &&
-    !isEmpty(income)
+    !isEmpty(enteredData.fullname) &&
+    !isEmpty(enteredData.date_of_birth) &&
+    enteredData.date_of_birth.trim().length === 10 &&
+    !isEmpty(enteredData.religion) &&
+    !isEmpty(enteredData.guardian_name) &&
+    !isEmpty(enteredData.father_name) &&
+    !isEmpty(enteredData.cnic) &&
+    enteredData.cnic.trim().length <= 20 &&
+    !isEmpty(enteredData.occupation) &&
+    !isEmpty(enteredData.phone_home) &&
+    enteredData.phone_home.trim().length <= 20 &&
+    !isEmpty(enteredData.phone_office) &&
+    enteredData.phone_office.trim().length <= 20 &&
+    !isEmpty(enteredData.address_home) &&
+    !isEmpty(enteredData.address_office) &&
+    !isEmpty(enteredData.income)
   )
 }
 
