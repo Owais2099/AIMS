@@ -95,7 +95,7 @@ async function addNewStudent(req, res, next) {
     return
   }
 
-  res.redirect('/')
+  res.render('students/registration-successful')
 }
 
 module.exports = {

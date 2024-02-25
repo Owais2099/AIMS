@@ -58,6 +58,21 @@
   text-align: center;
 }
 
+#success-h1 {
+  text-align: center;
+}
+
+#success {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+#success .btn {
+  margin-bottom: var(--space-4);
+}
+
+
 @media (min-width: 48rem) {
   .student-item-actions {
     flex-direction: row;
@@ -65,5 +80,10 @@
 
   #student-details {
     margin: var(--space-8) var(--space-4);
+  }
+
+  #success {
+    flex-direction: row;
+    justify-content: space-around;
   }
 }
